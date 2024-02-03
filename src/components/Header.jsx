@@ -1,16 +1,18 @@
-import React from "react";
 import cartimg from "../assets/images/icon-cart.svg";
 import avatar from "../assets/images/image-avatar.png";
-import iconMenu from "../assets/images/icon-menu.svg"
+import iconMenu from "../assets/images/icon-menu.svg";
 
-
-function Header({cart, handleOpen2}) {
+function Header({ cart, handleOpen2, handleSidebar }) {
   return (
     <nav>
-        
       <div className="left-menu">
-      <img src={iconMenu} alt="" className="iconmenu"/>
-        
+        <img
+          src={iconMenu}
+          alt=""
+          className="iconmenu"
+          onClick={handleSidebar}
+        />
+
         <h1>sneakers</h1>
         <ul>
           <li>
@@ -31,15 +33,14 @@ function Header({cart, handleOpen2}) {
         </ul>
       </div>
       <div className="right-menu">
-        <div  onClick={handleOpen2}>
+        <div onClick={handleOpen2}>
           <img src={cartimg} alt="cart" className="cart" />
-          <p id="quan">{cart}</p>
+          <p id="quantity">{cart}</p>
         </div>
         <div>
           <img src={avatar} alt="avatar" className="avatar" />
         </div>
       </div>
-      
     </nav>
   );
 }

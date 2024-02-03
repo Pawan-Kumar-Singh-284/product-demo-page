@@ -1,16 +1,18 @@
 import { useState } from "react";
-import "./App.css";
+
 import Header from "./components/Header";
 import Product from "./components/Product";
 import PopBox from "./components/PopBox";
 import ProductDetail from "./components/ProductDetail";
 import Cart from "./components/Cart";
+import Sidebar from "./Sidebar";
 
 function App() {
   const body = document.body;
 
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
+  const [side, setSide] = useState(false);
   let [count, setCount] = useState(0);
   let [tocart, setTocart] = useState(0);
 
@@ -43,9 +45,18 @@ function App() {
     setTocart(0);
   };
 
+  const handleSidebar = () => {
+    setSide(!side);
+  };
+
   return (
     <>
-      <Header cart={tocart} handleOpen2={handleOpen2} />
+      <Header
+        cart={tocart}
+        handleOpen2={handleOpen2}
+        handleSidebar={handleSidebar}
+      />
+      <Sidebar sidebar={side} handleSidebar={handleSidebar} />
       <section>
         <Product handleOpen={handleOpen} />
         <ProductDetail

@@ -1,9 +1,9 @@
 import React from "react";
 import minus from "../assets/images/icon-minus.svg";
 import plus from "../assets/images/icon-plus.svg";
-import cart from "../assets/images/icon-cart.svg"
+import cart from "../assets/images/icon-cart.svg";
 
-function ProductDetail({addto, deleteto,count, addtocart}) {
+function ProductDetail({ addto, deleteto, count, addtocart }) {
   return (
     <div className="about">
       <p className="companyName">SNEAKERS COMPANY</p>
@@ -17,9 +17,9 @@ function ProductDetail({addto, deleteto,count, addtocart}) {
         weather can offer.
       </p>
       <p className="pricing">
-        <span className="amount">$125.00</span> <span className="discount">50%</span>
+        <span className="amount">$125.00</span>{" "}
+        <span className="discount">50%</span>
         <span className="red-a">
-          
           <br />
           $250.00
         </span>
@@ -27,11 +27,11 @@ function ProductDetail({addto, deleteto,count, addtocart}) {
 
       <div className="selection">
         <div className="btns">
-          <button className="btn" id="minusBtn" onClick={deleteto}>
+          <button className="btn" onClick={deleteto}>
             <img src={minus} alt="" />
           </button>
           <p id="val">{count}</p>
-          <button className="btn" id="addBtn" onClick={addto}>
+          <button className="btn" onClick={addto}>
             <img src={plus} alt="" />
           </button>
         </div>
